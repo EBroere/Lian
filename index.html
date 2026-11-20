@@ -1,59 +1,234 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>My website</title>
+    <meta
+      name="description"
+      content="Lian Kalkman is virtual assistant voor creatieve koppen en handige handen."
+    />
 
-    <!-- Connect CSS -->
+    <title>Lian Kalkman | Virtual Assistant</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Eigen CSS -->
     <link rel="stylesheet" href="src/style.css" />
 
-    <!-- Connect JavaScript -->
+    <!-- Eigen JavaScript -->
     <script src="src/src.js" defer></script>
-
-    <!-- Instagram html file -->
-    <script src=""></script>
   </head>
 
   <body>
-    <h1>Lian Kalkman</h1>
-    <h2>Virtual assistant voor creatieve koppen en handige handen</h2>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#home"> Lian Kalkman </a>
 
-    <h1>Voor wie?</h1>
-    <p>
-      Voor de ondernemer die graag met zijn/haar handen werkt. Die geen zin/tijd
-      heeft voor de overige zaken.
-    </p>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Open navigatie"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <p>
-      Voor de ondernemer die door de bomen het bos niet meer ziet en wat hulp
-      nodig heeft weer structuur te krijgen.
-    </p>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Lian</a>
+            </li>
 
-    <p>
-      Voor de ondernemer die een paar dingen nog steeds moet uitzoeken, maar er
-      de tijd niet voor kan vinden.
-    </p>
+            <li class="nav-item">
+              <a class="nav-link" href="#voor-wie">Voor wie</a>
+            </li>
 
-    <p>
-      Voor de ondernemer die groeit en niet alles meer zelf kan blijven doen.
-      Voor de ondernemer die samen verder wilt groeien.
-    </p>
+            <li class="nav-item">
+              <a class="nav-link" href="#diensten">Diensten</a>
+            </li>
 
-    <h1>Waar kan ik jou mee helpen?</h1>
-    <p></p>
-    <p>Beheren en/of opschonen inbox</p>
-    <p>Social media (beheer & content)</p>
-    <p>Uitzoekwerk</p>
-    <p>Transcriberen</p>
-    <p>Vertalen Engels/Nederlands</p>
-    <p>
-      Mocht je iets anders in gedachten hebben waar je hulp bij nodig hebt, neem
-      zeker contact op en we bekijken samen de mogelijkheden!
-    </p>
+            <li class="nav-item">
+              <a class="nav-link" href="#instagram">Instagram</a>
+            </li>
 
-    <div id="instagram-container"></div>
-    <script async src="https://www.instagram.com/embed.js"></script>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- SECTIE 1: INTRODUCTIE -->
+      <section id="home" class="page-section intro-section">
+        <h1>Lian Kalkman</h1>
+
+        <img src="img/lian.png" alt="Lian Kalkman" class="intro-image" />
+
+        <p class="subtitle">
+          Virtual assistant voor creatieve koppen en handige handen
+        </p>
+
+        <a
+          href="#voor-wie"
+          class="section-next"
+          aria-label="Ga naar de volgende sectie"
+        >
+          <span></span>
+        </a>
+      </section>
+
+      <!-- SECTIE 2.1: VOOR WIE? -->
+      <section id="voor-wie" class="page-section who-section">
+        <div class="content-block">
+          <h2>Voor wie?</h2>
+
+          <p>
+            Voor de ondernemer die graag met zijn/haar handen werkt. Die geen
+            zin/tijd heeft voor de overige zaken.
+          </p>
+
+          <p>
+            Voor de ondernemer die door de bomen het bos niet meer ziet en wat
+            hulp nodig heeft weer structuur te krijgen.
+          </p>
+
+          <p>
+            Voor de ondernemer die een paar dingen nog steeds moet uitzoeken,
+            maar er de tijd niet voor kan vinden.
+          </p>
+
+          <p>
+            Voor de ondernemer die groeit en niet alles meer zelf kan blijven
+            doen. Voor de ondernemer die samen verder wilt groeien.
+          </p>
+        </div>
+
+        <a
+          href="#diensten"
+          class="section-next"
+          aria-label="Ga naar de diensten"
+        >
+          <span></span>
+        </a>
+      </section>
+
+      <!-- SECTIE 2.2: DIENSTEN -->
+      <section id="diensten" class="page-section services-section">
+        <div class="content-block">
+          <h2>Waar kan ik jou mee helpen?</h2>
+
+          <div class="service-list">
+            <p>Beheren en/of opschonen inbox</p>
+            <p>Social media (beheer &amp; content)</p>
+            <p>Uitzoekwerk</p>
+            <p>Transcriberen</p>
+            <p>Vertalen Engels/Nederlands</p>
+          </div>
+
+          <p>
+            Mocht je iets anders in gedachten hebben waar je hulp bij nodig
+            hebt, neem zeker contact op en we bekijken samen de mogelijkheden!
+          </p>
+        </div>
+
+        <a
+          href="#instagram"
+          class="section-next"
+          aria-label="Ga naar Instagram"
+        >
+          <span></span>
+        </a>
+      </section>
+
+      <!-- SECTIE 3: INSTAGRAM -->
+      <section id="instagram" class="page-section instagram-section">
+        <h2>Instagram</h2>
+
+        <div id="instagram-container"></div>
+      </section>
+    </main>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- NAAM EN OMSCHRIJVING -->
+          <div class="footer-about">
+            <h3>Lian Kalkman</h3>
+
+            <p>Virtual assistant voor creatieve koppen en handige handen.</p>
+          </div>
+
+          <!-- FOOTER NAVIGATIE -->
+          <div class="footer-navigation">
+            <a href="#home">Lian</a>
+            <a href="#voor-wie">Voor wie</a>
+            <a href="#diensten">Diensten</a>
+            <a href="#instagram">Instagram</a>
+          </div>
+
+          <!-- SOCIAL MEDIA EN E-MAIL -->
+          <div class="footer-contact">
+            <a
+              href="https://www.instagram.com/liankalkman/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/liankalkman/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:liankalkman@gmail.com" class="footer-email">
+              <i class="fa-regular fa-envelope"></i>
+              <span>liankalkman@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="footer-bottom">
+          <p>
+            © 2026 Lian Kalkman
+            <span class="footer-divider">|</span>
+            Website gemaakt door
+            <a
+              href="https://ellen-broere-frontend-portfolio.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ellen Broere</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

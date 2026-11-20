@@ -1,4 +1,6 @@
-/* IMPORT FONTS */
+/* =================================
+   IMPORT FONTS
+================================= */
 
 @import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
 
@@ -9,64 +11,249 @@
   font-style: normal;
 }
 
-/* COLOURS */
+/* =================================
+   COLOURS & VARIABLES
+================================= */
 
 :root {
   --beige: #cebeb3;
   --sage: #dae0d1;
   --grey: #8d8f89;
   --black: #000000;
+  --white: #ffffff;
+
+  --navbar-height: 72px;
+
+  --font-heading: "Brittany", cursive;
+  --font-body: "Forum", Georgia, serif;
 }
 
-/* GENERAL STYLING */
+/* =================================
+   GENERAL STYLING
+================================= */
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  scroll-padding-top: var(--navbar-height);
+}
+
 body {
   background-color: var(--beige);
   margin: 0;
-  padding: 40px;
+  padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
-/* MAIN TITLE - BRITTANY */
-
-h1 {
-  font-family: "Brittany", cursive;
-  color: var(--grey);
-  font-size: 64px;
-  font-weight: 400;
-  text-align: center;
+img {
+  max-width: 100%;
 }
 
-/* SUBTITLE - ELEGANT SERIF */
+/* =================================
+   TYPOGRAPHY
+================================= */
 
+h1,
 h2 {
-  font-family: "Forum", Georgia, serif;
-  color: var(--black);
-  font-size: 16px;
+  font-family: var(--font-heading);
+  color: var(--grey);
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: 400;
   text-align: center;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 28px;
 }
 
-/* PARAGRAPHS */
-
-p {
-  font-family: "Forum", Georgia, serif;
+.subtitle {
+  font-family: var(--font-body);
   color: var(--black);
-  font-size: 16px;
+  font-size: clamp(15px, 1.5vw, 16px);
   font-weight: 400;
   line-height: 1.6;
   text-align: center;
+  margin: 0;
 }
 
-/* Instagram */
+p {
+  font-family: var(--font-body);
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+/* =================================
+   NAVBAR
+================================= */
+
+.navbar {
+  background-color: var(--sage) !important;
+  min-height: var(--navbar-height);
+  padding: 12px clamp(18px, 4vw, 40px);
+  margin: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--grey) !important;
+}
+
+.navbar-nav {
+  gap: clamp(12px, 2vw, 24px);
+}
+
+.navbar-nav .nav-link {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--black) !important;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--grey) !important;
+}
+
+.navbar-toggler {
+  border: none;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* =================================
+   FULL SCREEN SECTIONS
+================================= */
+
+.page-section {
+  position: relative;
+  min-height: calc(100svh - var(--navbar-height));
+  width: 100%;
+  max-width: none;
+  margin: 0;
+
+  padding: clamp(55px, 7vh, 85px) clamp(20px, 5vw, 60px) 90px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  scroll-snap-align: start;
+}
+
+/* =================================
+   SECTION 1 - INTRODUCTION
+================================= */
+
+.intro-section {
+  background-color: var(--beige);
+  padding-top: 45px;
+  padding-bottom: 85px;
+}
+
+.intro-section h1 {
+  margin-bottom: 20px;
+}
+
+.intro-image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  max-height: 45svh;
+  height: auto;
+  object-fit: contain;
+  margin: 10px auto 25px;
+}
+
+.intro-section .subtitle {
+  margin-top: 0;
+  max-width: 100%;
+}
+
+/* =================================
+   SECTION 2.1 - VOOR WIE?
+================================= */
+
+.who-section {
+  background-color: var(--sage);
+}
+
+.content-block {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.content-block h2 {
+  margin-bottom: 35px;
+}
+
+.content-block p {
+  margin-bottom: 25px;
+}
+
+/* =================================
+   SECTION 2.2 - DIENSTEN
+================================= */
+
+.services-section {
+  background-color: var(--beige);
+}
+
+.service-list {
+  margin: 0 auto 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.service-list p {
+  position: relative;
+  text-align: left;
+  margin-bottom: 16px;
+  padding-left: 22px;
+}
+
+.service-list p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--grey);
+}
+
+/* =================================
+   SECTION 3 - INSTAGRAM
+================================= */
 
 .instagram-section {
-  text-align: center;
-  padding: 40px 0;
+  background-color: var(--sage);
+  display: block;
+  min-height: calc(100svh - var(--navbar-height));
+  padding: 60px clamp(15px, 4vw, 40px) 70px;
+}
+
+.instagram-section h2 {
+  margin-bottom: 28px;
 }
 
 .instagram-grid {
@@ -74,9 +261,9 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   align-items: start;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  justify-content: center;
 }
 
 .instagram-post {
@@ -90,10 +277,430 @@ p {
   margin: 0 auto !important;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
+/* =================================
+   SUBTLE WHITE DOWN ARROW
+================================= */
+
+.section-next {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  opacity: 0.7;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.section-next span {
+  width: 12px;
+  height: 12px;
+
+  border-right: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+
+  transform: rotate(45deg);
+  margin-top: -6px;
+}
+
+.section-next:hover {
+  opacity: 1;
+  transform: translate(-50%, 4px);
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+  background-color: var(--sage);
+  margin: 0;
+  padding: 40px clamp(20px, 4vw, 50px);
+  text-align: left;
+  scroll-snap-align: start;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-about {
+  flex: 1;
+}
+
+.footer-about h3 {
+  font-family: var(--font-heading);
+  color: var(--grey);
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+
+.footer-about p {
+  font-family: var(--font-body);
+  color: var(--black);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+}
+
+.footer-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 22px);
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.footer-navigation a {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.footer-navigation a:hover {
+  color: var(--grey);
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  flex: 1;
+}
+
+.footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--black);
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--grey);
+}
+
+.footer-contact .footer-email {
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin-top: 30px;
+  padding-top: 18px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--black);
+  opacity: 0.65;
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-bottom a:hover {
+  color: var(--grey);
+}
+
+.footer-divider {
+  margin: 0 6px;
+}
+
+/* =================================
+   LARGE SCREENS
+================================= */
+
+@media (min-width: 1400px) {
+  .content-block {
+    max-width: 850px;
+  }
+
+  .intro-image {
+    max-width: 440px;
+  }
+
+  .instagram-grid {
+    max-width: 1200px;
+  }
+}
+
+/* =================================
+   TABLET & SMALL LAPTOP
+================================= */
+
+@media (max-width: 1100px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer-about p {
+    text-align: center;
+  }
+
+  .footer-navigation {
+    flex: none;
+  }
+
+  .footer-contact {
+    flex: none;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 991px) {
+  :root {
+    --navbar-height: 65px;
+  }
+
+  .navbar {
+    padding: 10px 22px;
+  }
+
+  .navbar-collapse {
+    padding-top: 12px;
+  }
+
+  .navbar-nav {
+    gap: 4px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 9px 0;
+  }
+
+  .page-section {
+    padding: 60px 25px 85px;
+  }
+
+  .instagram-section {
+    padding: 55px 20px 65px;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 767px) {
+  h1,
+  h2 {
+    font-size: clamp(38px, 9vw, 46px);
+  }
+
+  .navbar {
+    padding: 10px 18px;
+  }
+
+  .navbar-brand {
+    font-size: 25px;
+  }
+
+  .page-section {
+    min-height: calc(100svh - var(--navbar-height));
+    padding: 55px 20px 80px;
+  }
+
+  .intro-section {
+    padding-top: 35px;
+    padding-bottom: 80px;
+  }
+
+  .intro-section h1 {
+    margin-bottom: 15px;
+  }
+
+  .intro-image {
+    max-width: min(100%, 360px);
+    max-height: 40svh;
+    margin: 10px auto 20px;
+  }
+
+  .subtitle {
+    max-width: 320px;
+  }
+
+  .content-block {
+    max-width: 560px;
+  }
+
+  .content-block h2 {
+    margin-bottom: 28px;
+  }
+
+  .content-block p {
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .service-list {
+    margin-bottom: 28px;
+  }
+
+  .service-list p {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .instagram-section {
+    padding: 50px 15px 55px;
+  }
+
+  .instagram-section h2 {
+    margin-bottom: 25px;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .section-next {
+    bottom: 15px;
+  }
+
+  .footer {
+    padding: 35px 20px 20px;
+  }
+
+  .footer-content {
+    gap: 22px;
+  }
+
+  .footer-about h3 {
+    font-size: 28px;
+  }
+
+  .footer-navigation {
+    gap: 12px 18px;
+  }
+
+  .footer-navigation a {
+    font-size: 13px;
+  }
+
+  .footer-contact {
+    gap: 16px;
+  }
+
+  .footer-contact .footer-email {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    margin-top: 25px;
+    padding-top: 15px;
+  }
+
+  .footer-divider {
+    margin: 0 3px;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 480px) {
+  h1,
+  h2 {
+    font-size: 40px;
+  }
+
+  .page-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .content-block p {
+    font-size: 14px;
+  }
+
+  .service-list p {
+    font-size: 14px;
+  }
+
   .instagram-grid {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .footer-navigation {
+    gap: 12px 15px;
+  }
+
+  .footer-bottom p {
+    line-height: 1.8;
+  }
+}
+
+/* =================================
+   EXTRA SMALL SCREENS
+================================= */
+
+@media (max-width: 360px) {
+  .navbar-brand {
+    font-size: 22px;
+  }
+
+  h1,
+  h2 {
+    font-size: 36px;
+  }
+
+  .intro-image {
+    max-height: 35svh;
+  }
+
+  .footer {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
